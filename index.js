@@ -14,12 +14,18 @@ $(function() {
     var regex = new RegExp("^\\d{" + MIN_SIZE_ID + ","
                            + MAX_SIZE_ID + "}$");
     if (!input.match(regex)) {
-      console.error("Invalid input: must be a number "
+      var message = "Invalid input: must be a number "
                     + MIN_SIZE_ID + "-" + MAX_SIZE_ID
-                    + " digits long.");
+                    + " digits long.";
+      console.error(message);
+      alert(message);
+      $("#userID").val("");
     } else {
       input = parseInt(input);
-
+      
+      // Add loading indicator
+      $("#loading").removeClass("hide");
+      
       // Send API POST request
       postAddAttendence(input);
     }
@@ -31,21 +37,32 @@ $(function() {
   function postAddAttendence(userID) {
     var url = "http://" + SERVER_URL
       + ":" + SERVER_PORT + "/" + "addAttendance";
-    $.post(
+    $.ajax(
       url,
       {
-        user_ID: userID,
-        eventKey: EVENT_KEY,
-      },
-      function(data, textStatus, jqXHR) {
-        if (textStatus != "success") {
-          console.error("Failed to POST request.");
-        } else {
-          console.log("Success!");
-          console.log(data);
+        method: "POST",
+        data: {
+          user_ID: userID,
+          eventKey: EVENT_KEY,
+        },
+        success: function(data, textStatus, jqXHR) {
+          if (textStatus != "success") {
+            console.error("Failed to POST request.");
+          } else {
+            console.log("Success!");
+            $("#success").removeClass("hide");
+          }
+        },
+        complete: function() {
+          $("#loading").addClass("hide");
+          $("#userID").val("");
         }
       }
     );
   }
+  
+  $("#success").on("animationend", function(event) {
+    $("#success").addClass("hide");
+  });
   
 });

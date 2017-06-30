@@ -14,3 +14,38 @@ input {
 #submit {
   margin: 1em;
 }
+
+@keyframes fade-in-then-out {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+img {
+  border: none;
+}
+
+#success {
+  width: auto;
+  height: 150px;
+  opacity: 0;
+  animation: fade-in-then-out 2s;
+}
+
+#loading {
+  width: auto;
+  height: 150px;
+}
+
+.hide {
+  display: none;
+}
