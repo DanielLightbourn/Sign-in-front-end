@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html lang=en>
-  <head>
-    <meta charset=utf-8>
-    <title>OnAroll Sign-In</title>
-    <script src=jquery-3.2.1.min.js></script>
-    <script src=index.js></script>
-    <link rel=stylesheet href=index.css>
-  </head>
-  <body>
-    <h1>Sign-In:</h1>
-    <h3>Enter student ID</h3>
-    <form autocomplete=no id=form>
-      <input id=userID type=number autocomplete=off size=4>
-      <br>
-      <input id=submit type=submit value="Sign Attendence">
-    </form>
-    <img id=success src=success.png alt="Success!" class=hide>
-    <img id=loading src=loading.gif alt="Loading..." class=hide>
-  </body>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>On A Roll - Sign in</title>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="js/jquery.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-page">
+
+	<div data-role="header" class="jqm-header">
+		<h2><img src="assets/img/REPLACEME.png" alt="LOGO"></h2>
+	</div>
+
+	<div role="main" class="ui-content jqm-content">
+	<h2>Attendance for event: TOBEIMPLEMENTED</h2>
+
+	<form>
+		<label for="id-number">Please enter your student ID number to sign in...</label>
+		<input type="number" data-clear-btn="false" name="id-number" id="id-number" value="" autocomplete="off" style="text-align:center;" min="1" max="99999">
+		<input type="button" id="submit" value="Sign in">
+	</form>
+
+	<img id=success src=success.png alt="Success!" class=hide>
+	<img id=loading src=loading.gif alt="Loading..." class=hide>
+
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+		<p>jQuery Mobile version <span class="jqm-version"></span></p>
+		<p>Copyright YEAR OUR NAMES HERE</p>
+	</div>
+
+</div>
+
+</body>
 </html>
-  

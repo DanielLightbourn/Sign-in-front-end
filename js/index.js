@@ -5,21 +5,21 @@ const SERVER_PORT = "3000";
 const EVENT_KEY = "test1";
 
 $(function() {
-  
-  $("#form").submit(function(event) {
-    console.log("Submit ID");
-    
+  $("#submit").on('vclick',function() {
+    console.log("Submit ID ");
+
     // Validate input
-    var input = $("#userID").val();
+    var input = $("#id-number").val();
     var regex = new RegExp("^\\d{" + MIN_SIZE_ID + ","
                            + MAX_SIZE_ID + "}$");
+
     if (!input.match(regex)) {
       var message = "Invalid input: must be a number "
                     + MIN_SIZE_ID + "-" + MAX_SIZE_ID
                     + " digits long.";
       console.error(message);
       alert(message);
-      $("#userID").val("");
+      $("#id-number").val("");
     } else {
       input = parseInt(input);
       
@@ -30,10 +30,10 @@ $(function() {
       postAddAttendence(input);
     }
     
-    event.preventDefault();
+    //event.preventDefault();
     event.cancelBubble = true;
   });
-  
+
   function postAddAttendence(userID) {
     var url = "http://" + SERVER_URL
       + ":" + SERVER_PORT + "/" + "addAttendance";
@@ -55,7 +55,7 @@ $(function() {
         },
         complete: function() {
           $("#loading").addClass("hide");
-          $("#userID").val("");
+          $("#id-number").val("");
         }
       }
     );
