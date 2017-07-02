@@ -7,10 +7,6 @@ input {
   
 }
 
-#userID {
-  width: 4em;
-}
-
 #submit {
   margin: 1em;
 }
@@ -39,6 +35,19 @@ img {
   height: 150px;
   opacity: 0;
   animation: fade-in-then-out 2s;
+}
+
+#failure {
+  width: auto;
+  height: 150px;
+  opacity: 0;
+  animation: fade-in-then-out 5s;
+}
+
+#failmsg {
+  width: auto;
+  opacity: 0;
+  animation: fade-in-then-out 5s;
 }
 
 #loading {

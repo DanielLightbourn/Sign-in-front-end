@@ -48,11 +48,17 @@ $(function() {
         success: function(data, textStatus, jqXHR) {
           if (textStatus != "success") {
             console.error("Failed to POST request.");
+	    $("#failure").removeClass("hide");
+	    $("#failmsg").removeClass("hide");
           } else {
             console.log("Success!");
             $("#success").removeClass("hide");
           }
         },
+	error: function(xhr) {
+	    $("#failure").removeClass("hide");
+	    $("#failmsg").removeClass("hide");
+	},
         complete: function() {
           $("#loading").addClass("hide");
           $("#id-number").val("");
@@ -64,5 +70,12 @@ $(function() {
   $("#success").on("animationend", function(event) {
     $("#success").addClass("hide");
   });
-  
+
+  $("#failure").on("animationend", function(event) {
+    $("#failure").addClass("hide");
+  });
+
+  $("#failmsg").on("animationend", function(event) {
+    $("#failmsg").addClass("hide");
+  });  
 });
