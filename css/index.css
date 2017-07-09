@@ -44,7 +44,13 @@ img {
   animation: fade-in-then-out 5s;
 }
 
-#failmsg {
+#failmsg1 {
+  width: auto;
+  opacity: 0;
+  animation: fade-in-then-out 5s;
+}
+
+#failmsg2 {
   width: auto;
   opacity: 0;
   animation: fade-in-then-out 5s;

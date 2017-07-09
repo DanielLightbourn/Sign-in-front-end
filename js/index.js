@@ -23,14 +23,13 @@ $(function() {
     } else {
       input = parseInt(input);
       
-      // Add loading indicator
+      // add loading indicator
       $("#loading").removeClass("hide");
       
-      // Send API POST request
+      // send API POST request
       postAddAttendence(input);
     }
     
-    //event.preventDefault();
     event.cancelBubble = true;
   });
 
@@ -47,21 +46,28 @@ $(function() {
         },
         success: function(data, textStatus, jqXHR) {
           if (textStatus != "success") {
-            console.error("Failed to POST request.");
+	    // failure, not sure what happened
 	    $("#failure").removeClass("hide");
-	    $("#failmsg").removeClass("hide");
+	    $("#failmsg2").removeClass("hide");
           } else {
-            console.log("Success!");
             $("#success").removeClass("hide");
           }
         },
 	error: function(xhr) {
-	    $("#failure").removeClass("hide");
-	    $("#failmsg").removeClass("hide");
+	    if (xhr.status != "404") {
+		// failure, server may be down
+		$("#failure").removeClass("hide");
+		$("#failmsg1").removeClass("hide");
+	    } else {
+		// failure, are you in the right room?
+		$("#failure").removeClass("hide");
+		$("#failmsg2").removeClass("hide");
+	    }
 	},
         complete: function() {
-          $("#loading").addClass("hide");
-          $("#id-number").val("");
+	    // hide loading indicator and clear out the input box
+            $("#loading").addClass("hide");
+            $("#id-number").val("");
         }
       }
     );
@@ -75,7 +81,11 @@ $(function() {
     $("#failure").addClass("hide");
   });
 
-  $("#failmsg").on("animationend", function(event) {
-    $("#failmsg").addClass("hide");
-  });  
+  $("#failmsg1").on("animationend", function(event) {
+    $("#failmsg1").addClass("hide");
+  });
+
+  $("#failmsg2").on("animationend", function(event) {
+    $("#failmsg2").addClass("hide");
+  });
 });
