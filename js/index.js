@@ -105,14 +105,14 @@ $(function() {
     if(generateNewKeys) {
       newKeys = generateKeys(false);
       dataToPost = {
-          user_ID: userID,
-          eventKey: EVENT_KEY,
-          newKey: hextob64u(newKeys.pubKeyObj.pubKeyHex)
+          user_ID: userID.toString(),
+          eventKey: EVENT_KEY.toString(),
+          newKey: hextob64u(newKeys.pubKeyObj.pubKeyHex).toString()
         }
     } else {
       dataToPost = {
-          user_ID: userID,
-          eventKey: EVENT_KEY,
+          user_ID: userID.toString(),
+          eventKey: EVENT_KEY.toString(),
         }
     }
     var signedData = signJSON(dataToPost, true)
