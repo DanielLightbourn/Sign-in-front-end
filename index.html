@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 	<title>On A Roll - Sign in</title>
-	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<script src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css"></link>
+	<link rel="stylesheet" href="css/index.css"></link>
+	<link rel="shortcut icon" href="img/favicon.ico"></link>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"></link>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jsrsasign-all-min.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -16,7 +17,7 @@
 <div data-role="page" class="jqm-page">
 
 	<div data-role="header" class="jqm-header">
-		<h2><img src="assets/img/REPLACEME.png" alt="LOGO"></h2>
+		<h2><img src="assets/img/REPLACEME.png" alt="LOGO"></img></h2>
 	</div>
 
 	<div role="main" class="ui-content jqm-content">
@@ -24,15 +25,16 @@
 
 	<form>
 		<label for="id-number">Please enter your student ID number to sign in...</label>
-		<input type="tel" data-clear-btn="false" name="id-number" id="id-number" value="" autocomplete="off" style="text-align:center;" min="1" max="99999">
-		<input type="button" id="submit" value="Sign in">
+		<input type="tel" data-clear-btn="false" name="id-number" id="id-number" value="" autocomplete="off" style="text-align:center;" min="1" max="99999"></input>
+		<input type="button" id="submit" value="Sign in"></input>
 	</form>
 
-	<img id="success" src="img/success.png" alt="Success!" class="hide">
-	<img id="failure" src="img/fail.png" alt="Unable to sign-in" class="hide"><br>
-	<text id="failmsg1" color="#6A1B9A" class="hide">There was an issue signing in. <br>The server may be down.</text>	
-	<text id="failmsg2" color="#6A1B9A" class="hide">There was an issue signing in. <br>Are you in the right room?</text>
-	<img id="loading" src="img/loading.gif" alt="Loading..." class="hide">
+	<img id="success" src="img/success.png" alt="Success!" class="hide"></img>
+	<img id="failure" src="img/fail.png" alt="Unable to sign-in" class="hide"></img><br></br>
+	<text id="failmsg1" color="#6A1B9A" class="hide">There was an issue signing in. <br></br>The server may be down.</text>	
+	<text id="failmsg2" color="#6A1B9A" class="hide">There was an issue signing in. <br></br>Are you in the right room?</text>
+	<text id="failmsg3" color="#6A1B9A" class="hide">There was an issue signing in. <br></br>This kiosk is not authenticated.</text>
+	<img id="loading" src="img/loading.gif" alt="Loading..." class="hide"></img>
 
 	</div>
 
