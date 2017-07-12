@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>On A Roll - Kiosk authentication</title>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css"></link>
+	<link rel="stylesheet" href="css/index.css"></link>
+	<link rel="shortcut icon" href="img/favicon.ico"></link>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"></link>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jsrsasign-all-min.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-page">
+
+	<div data-role="header" class="jqm-header">
+		<h2><img src="assets/img/REPLACEME.png" alt="LOGO"></img></h2>
+	</div>
+
+	<div role="main" class="ui-content jqm-content">
+	<h2>Kiosk Authentication</h2>
+
+	<form>
+		<label for="pin-number">Please enter the generated pin code to authenticate this kiosk</label>
+		<input type="password" data-clear-btn="false" name="pin-number" id="pin-number" value="" autocomplete="off" style="text-align:center;"></input>
+		<input type="button" id="submit" value="Authenticate"></input>
+	</form>
+
+	<img id="success" src="img/success.png" alt="Success!" class="hide"></img>
+	<img id="failure" src="img/fail.png" alt="Unable to sign-in" class="hide"></img><br></br>
+	<text id="failmsg1" color="#6A1B9A" class="hide">There was an issue authenticating. <br></br>The server may be down.</text>	
+	<text id="failmsg2" color="#6A1B9A" class="hide">There was an issue authenticating. <br></br>Incorrect pin code.</text>
+	<img id="loading" src="img/loading.gif" alt="Loading..." class="hide"></img>
+
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+		<p>jQuery Mobile version <span class="jqm-version"></span></p>
+		<p>Copyright YEAR OUR NAMES HERE</p>
+	</div>
+
+</div>
+
+</body>
+</html>
